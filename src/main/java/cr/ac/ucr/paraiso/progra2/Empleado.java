@@ -5,12 +5,14 @@
 package cr.ac.ucr.paraiso.progra2;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  *
  * @author Alvaro Mena
  */
 public class Empleado {
+
     private int idEmpleado;
     private String nombre;
     private float salario;
@@ -69,6 +71,48 @@ public class Empleado {
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "idEmpleado=" + idEmpleado + 
+                ", nombre=" + nombre + 
+                ", salario=" + salario + 
+                ", departamento=" + departamento +
+                ", fechaNacimiento=" + fechaNacimiento + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Empleado other = (Empleado) obj;
+        if (this.idEmpleado != other.idEmpleado) {
+            return false;
+        }
+        if (Float.floatToIntBits(this.salario) != Float.floatToIntBits(other.salario)) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.departamento, other.departamento)) {
+            return false;
+        }
+        return Objects.equals(this.fechaNacimiento, other.fechaNacimiento);
     }
     
     

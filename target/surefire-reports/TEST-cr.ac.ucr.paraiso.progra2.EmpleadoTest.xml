@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="cr.ac.ucr.paraiso.progra2.EmpleadoTest" time="0.092" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="cr.ac.ucr.paraiso.progra2.EmpleadoTest" time="0.067" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\Alvaro Mena\AppData\Local\Temp\surefire4371533988163797465\surefirebooter-20250311113116008_3.jar C:\Users\Alvaro Mena\AppData\Local\Temp\surefire4371533988163797465 2025-03-11T11-31-15_742-jvmRun1 surefire-20250311113116008_1tmp surefire_0-20250311113116008_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Alvaro Mena\AppData\Local\Temp\surefire11522102870328668032\surefirebooter-20250313112345265_3.jar C:\Users\Alvaro Mena\AppData\Local\Temp\surefire11522102870328668032 2025-03-13T11-23-45_180-jvmRun1 surefire-20250313112345265_1tmp surefire_0-20250313112345265_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="cr.ac.ucr.paraiso.progra2.EmpleadoTest"/>
     <property name="surefire.test.class.path" value="C:\SW_DEV\progra2-2025\progra2-2025\target\test-classes;C:\SW_DEV\progra2-2025\progra2-2025\target\classes;C:\Users\Alvaro Mena\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Alvaro Mena\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Alvaro Mena\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Alvaro Mena\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Alvaro Mena\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Alvaro Mena\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Alvaro Mena\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
@@ -32,7 +32,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Alvaro Mena\AppData\Local\Temp\surefire4371533988163797465\surefirebooter-20250311113116008_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Alvaro Mena\AppData\Local\Temp\surefire11522102870328668032\surefirebooter-20250313112345265_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
@@ -62,5 +62,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="instanciar_empleado_funciona" classname="cr.ac.ucr.paraiso.progra2.EmpleadoTest" time="0.065"/>
+  <testcase name="equals_dos_empleados_iguales" classname="cr.ac.ucr.paraiso.progra2.EmpleadoTest" time="0.029"/>
+  <testcase name="toString_funciona" classname="cr.ac.ucr.paraiso.progra2.EmpleadoTest" time="0.015"/>
+  <testcase name="instanciar_empleado_funciona" classname="cr.ac.ucr.paraiso.progra2.EmpleadoTest" time="0.001"/>
+  <testcase name="equals_dos_empleados_distintos" classname="cr.ac.ucr.paraiso.progra2.EmpleadoTest" time="0.001"/>
 </testsuite>

@@ -31,4 +31,5 @@
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>cr.ac.ucr.paraiso.progra2.Progra22025</exec.mainClass>
     </properties>
+    
 </project>

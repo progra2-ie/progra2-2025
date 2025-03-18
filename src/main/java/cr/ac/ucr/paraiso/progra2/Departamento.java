@@ -4,6 +4,8 @@
  */
 package cr.ac.ucr.paraiso.progra2;
 
+import java.util.Objects;
+
 /**
  *
  * @author Alvaro Mena
@@ -30,6 +32,35 @@ public class Departamento {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Departamento{" + "codDepto=" + codDepto + ", nombre=" + nombre + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Departamento other = (Departamento) obj;
+        if (this.codDepto != other.codDepto) {
+            return false;
+        }
+        return Objects.equals(this.nombre, other.nombre);
     }
     
           
