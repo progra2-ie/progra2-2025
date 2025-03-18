@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
-package cr.ac.ucr.paraiso.progra2;
+package cr.ac.ucr.paraiso.progra2.domain;
 
+import cr.ac.ucr.paraiso.progra2.domain.Departamento;
+import cr.ac.ucr.paraiso.progra2.domain.Empleado;
 import java.time.LocalDate;
 import java.time.Month;
 import org.junit.jupiter.api.Test;
