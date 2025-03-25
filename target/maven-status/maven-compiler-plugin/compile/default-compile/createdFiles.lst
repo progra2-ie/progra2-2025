@@ -1,4 +1,7 @@
-cr\ac\ucr\paraiso\progra2\busquedaempleado\EmpleadoUtil.class
-cr\ac\ucr\paraiso\progra2\domain\Empleado.class
+cr\ac\ucr\paraiso\progra2\herencia\Profesor.class
 cr\ac\ucr\paraiso\progra2\Progra22025.class
+cr\ac\ucr\paraiso\progra2\busquedaempleado\EmpleadoUtil.class
+cr\ac\ucr\paraiso\progra2\herencia\Persona.class
+cr\ac\ucr\paraiso\progra2\herencia\Estudiante.class
+cr\ac\ucr\paraiso\progra2\domain\Empleado.class
 cr\ac\ucr\paraiso\progra2\domain\Departamento.class

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="cr.ac.ucr.paraiso.progra2.busquedaempleado.EmpleadoUtilTest" time="0.037" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="cr.ac.ucr.paraiso.progra2.herencia.EstudianteTest" time="0.089" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,9 +16,9 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\Alvaro Mena\AppData\Local\Temp\surefire10744906000000394980\surefirebooter-20250320100111281_3.jar C:\Users\Alvaro Mena\AppData\Local\Temp\surefire10744906000000394980 2025-03-20T10-01-11_188-jvmRun1 surefire-20250320100111281_1tmp surefire_0-20250320100111281_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Alvaro Mena\AppData\Local\Temp\surefire3050031594481472207\surefirebooter-20250325092153880_3.jar C:\Users\Alvaro Mena\AppData\Local\Temp\surefire3050031594481472207 2025-03-25T09-21-53_700-jvmRun1 surefire-20250325092153880_1tmp surefire_0-20250325092153880_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="cr.ac.ucr.paraiso.progra2.busquedaempleado.EmpleadoUtilTest#buscar_empleado_existente"/>
+    <property name="test" value="cr.ac.ucr.paraiso.progra2.herencia.EstudianteTest"/>
     <property name="surefire.test.class.path" value="C:\SW_DEV\progra2-2025\progra2-2025\target\test-classes;C:\SW_DEV\progra2-2025\progra2-2025\target\classes;C:\Users\Alvaro Mena\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Alvaro Mena\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Alvaro Mena\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Alvaro Mena\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Alvaro Mena\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Alvaro Mena\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Alvaro Mena\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Alvaro Mena"/>
@@ -32,7 +32,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Alvaro Mena\AppData\Local\Temp\surefire10744906000000394980\surefirebooter-20250320100111281_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Alvaro Mena\AppData\Local\Temp\surefire3050031594481472207\surefirebooter-20250325092153880_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
@@ -62,5 +62,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="buscar_empleado_existente" classname="cr.ac.ucr.paraiso.progra2.busquedaempleado.EmpleadoUtilTest" time="0.013"/>
+  <testcase name="testToString" classname="cr.ac.ucr.paraiso.progra2.herencia.EstudianteTest" time="0.052"/>
 </testsuite>

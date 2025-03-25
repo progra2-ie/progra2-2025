@@ -10,7 +10,6 @@ public class EmpleadoUtil {
     
     public static int buscarEmpleado(Empleado[] empleados, int idEmpleadoBuscado){
         
-        int a;
         if (empleados == null)
             throw new NullPointerException("El arreglo es nulo");
         int posicionPorRetornar = -1;
