@@ -15,6 +15,7 @@ public final class Estudiante extends Persona{
     private String carrera;
 
     public Estudiante(float notaAdmision, String carrera, int idPersona, String nombre, String apellidos) {
+        
         super(idPersona, nombre, apellidos);
         this.notaAdmision = notaAdmision;
         this.carrera = carrera;
