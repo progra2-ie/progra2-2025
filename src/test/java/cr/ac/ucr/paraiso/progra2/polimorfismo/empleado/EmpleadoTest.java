@@ -25,7 +25,8 @@ public class EmpleadoTest {
 				new EmpleadoPorHora("Carlos", "Mora",
 						"1011",41,(float)1000.0)
 		};
-       // empleados[0].set
+       if(empleados[0] instanceof EmpleadoPorComision)
+           ((EmpleadoPorComision)empleados[0]).setMontoVentas(10000000F);
         //Act
         for(Empleado empleadoActual : empleados)
 			System.out.println(empleadoActual.getNombre() 

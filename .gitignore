@@ -1,0 +1,33 @@
+# NetBeans specific files and folders
+nbproject/private/
+build/
+dist/
+nbdist/
+nbactions.xml
+manifest.mf
+
+# Java class files
+*.class
+
+# Compiled archives (jars, wars, ears, etc)
+*.jar
+*.war
+*.ear
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# IDE specific files (IntelliJ IDEA, Eclipse, etc.)
+.idea/
+.settings/
+*.iml
+
+# Other files
+*.swp
+*~
+# maven files
+target/
