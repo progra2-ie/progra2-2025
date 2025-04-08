@@ -141,14 +141,15 @@ public class EmpleadoData  {
      * @param tamanoString
      * @param posicion
      */
-   /* private String readString(int tamanoString, long posicion) throws IOException{
-        this.seek(posicion);
+   private String readString(int tamanoString, long posicion) throws IOException{
+        raf.seek(posicion);
         byte[] datos = new byte[tamanoString];
-        this.readFully(datos);
+        raf.readFully(datos);
         String dato = new String(datos).trim();
         return dato;
 
-    }//readString*/
+    }//readString
+   
     private byte[] toBytes(String dato, int tamanoString){
         byte[] datos = new byte[tamanoString];
             byte[] temp = dato.getBytes();
