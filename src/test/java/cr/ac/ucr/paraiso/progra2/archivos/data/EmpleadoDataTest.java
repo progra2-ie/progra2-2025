@@ -4,7 +4,8 @@
  */
 package cr.ac.ucr.paraiso.progra2.archivos.data;
 
-import cr.ac.ucr.paraiso.progra2.archivos.domain.Empleado;
+import cr.ac.ucr.paraiso.progra2.archivosraf.data.EmpleadoData;
+import cr.ac.ucr.paraiso.progra2.archivosraf.domain.Empleado;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;

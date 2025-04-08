@@ -1,7 +1,7 @@
-package cr.ac.ucr.paraiso.progra2.archivos.data;
+package cr.ac.ucr.paraiso.progra2.archivosraf.data;
 
 
-import cr.ac.ucr.paraiso.progra2.archivos.domain.Empleado;
+import cr.ac.ucr.paraiso.progra2.archivosraf.domain.Empleado;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -79,7 +79,7 @@ public class EmpleadoData  {
             this.setLength(this.length() - TAMANO_REGISTRO);
         }
         return encontrado;
-    }//buscar*/
+    }//buscar*/ 
     /*
      * Inserta un empleado en el archivo. El nuevo empleado no puede
      * tener una identificacion igual a uno que ya exista. Los registros

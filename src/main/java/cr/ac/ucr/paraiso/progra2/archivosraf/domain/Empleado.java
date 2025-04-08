@@ -1,5 +1,5 @@
-package cr.ac.ucr.paraiso.progra2.archivos.domain;
-
+package cr.ac.ucr.paraiso.progra2.archivosraf.domain;
+ 
 public class Empleado {
     private int idEmpleado;
     private String nombre;

@@ -1,4 +1,4 @@
-package cr.ac.ucr.paraiso.progra2.archivos.data;
+package cr.ac.ucr.paraiso.progra2.archivosraf.data;
 
 public class EmpleadoExistenteException extends Exception {
 
