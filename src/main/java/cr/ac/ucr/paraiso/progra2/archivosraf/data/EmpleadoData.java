@@ -25,7 +25,59 @@ public class EmpleadoData  {
         raf = new RandomAccessFile(file, "rw");
     }
 
+ /*
+     * Lee un String en el archivo
+     * @param tamanoString
+     * @param posicion
+     */
+   private String readString(int tamanoString, long posicion) throws IOException{
+        raf.seek(posicion);
+        byte[] datos = new byte[tamanoString];
+        raf.readFully(datos);
+        String dato = new String(datos).trim();
+        return dato;
 
+    }//readString
+   
+    private byte[] toBytes(String dato, int tamanoString){
+        byte[] datos = new byte[tamanoString];
+            byte[] temp = dato.getBytes();
+            for (int i = 0; i < tamanoString; i++) {
+                if (i<temp.length)
+                datos[i] =temp[i];
+            }
+        return datos;
+    }
+
+    public ArrayList<Empleado> findAll() throws IOException {
+        int totalRegistros = (int)(raf.length()/TAMANO_REGISTRO);
+        ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+        for(int i=0; i<totalRegistros; i++){
+            raf.seek(i*TAMANO_REGISTRO);
+            int idEmp = raf.readInt();
+            String nombre = this.readString(TAMANO_NOMBRE,
+                    raf.getFilePointer());
+            String apellidos = this.readString(TAMANO_APELLIDOS,
+                    raf.getFilePointer());
+            empleados.add(new Empleado(idEmp,nombre, apellidos));
+        }//for
+        return empleados;
+    }
+
+    /* inserta el final del archivo */
+    public void insert(Empleado empleado) throws IOException {
+        //aumentar el tamaño del archivo en 64 bytes (TAMAÑO_REGISTRO)
+        raf.setLength(raf.length() + TAMANO_REGISTRO);
+        raf.seek(raf.length() - TAMANO_REGISTRO);
+        raf.writeInt(empleado.getIdEmpleado());
+        // Se debe transformar el string en un arreglo de bytes para
+        // poder escribirlo en el archivo
+        byte nombre[] = toBytes(empleado.getNombre(),TAMANO_NOMBRE);
+        raf.write(nombre);
+        byte apellidos[]= toBytes(empleado.getApellidos(),TAMANO_APELLIDOS);
+        raf.write(apellidos);
+    }
+    
   /*  public boolean buscar(int idEmpleadoBuscado)
             throws IOException{
         boolean encontrado = false;
@@ -136,56 +188,5 @@ public class EmpleadoData  {
 
     }//insertarEmpleado*/
 
-    /*
-     * Lee un String en el archivo
-     * @param tamanoString
-     * @param posicion
-     */
-   private String readString(int tamanoString, long posicion) throws IOException{
-        raf.seek(posicion);
-        byte[] datos = new byte[tamanoString];
-        raf.readFully(datos);
-        String dato = new String(datos).trim();
-        return dato;
-
-    }//readString
    
-    private byte[] toBytes(String dato, int tamanoString){
-        byte[] datos = new byte[tamanoString];
-            byte[] temp = dato.getBytes();
-            for (int i = 0; i < tamanoString; i++) {
-                if (i<temp.length)
-                datos[i] =temp[i];
-            }
-        return datos;
-    }
-
-    public ArrayList<Empleado> findAll() throws IOException {
-        int totalRegistros = (int)(raf.length()/TAMANO_REGISTRO);
-        ArrayList<Empleado> empleados = new ArrayList<Empleado>();
-        for(int i=0; i<totalRegistros; i++){
-            raf.seek(i*TAMANO_REGISTRO);
-            int idEmp = raf.readInt();
-            String nombre = this.readString(TAMANO_NOMBRE,
-                    raf.getFilePointer());
-            String apellidos = this.readString(TAMANO_APELLIDOS,
-                    raf.getFilePointer());
-            empleados.add(new Empleado(idEmp,nombre, apellidos));
-        }//for
-        return empleados;
-    }
-
-    /* inserta el final del archivo */
-    public void insert(Empleado empleado) throws IOException {
-        //aumentar el tamaño del archivo en 64 bytes (TAMAÑO_REGISTRO)
-        raf.setLength(raf.length() + TAMANO_REGISTRO);
-        raf.seek(raf.length() - TAMANO_REGISTRO);
-        raf.writeInt(empleado.getIdEmpleado());
-        // Se debe transformar el string en un arreglo de bytes para
-        // poder escribirlo en el archivo
-        byte nombre[] = toBytes(empleado.getNombre(),TAMANO_NOMBRE);
-        raf.write(nombre);
-        byte apellidos[]= toBytes(empleado.getApellidos(),TAMANO_APELLIDOS);
-        raf.write(apellidos);
-    }
 }
