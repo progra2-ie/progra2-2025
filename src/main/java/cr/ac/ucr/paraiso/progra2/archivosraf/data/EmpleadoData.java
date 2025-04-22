@@ -77,6 +77,48 @@ public class EmpleadoData  {
         byte apellidos[]= toBytes(empleado.getApellidos(),TAMANO_APELLIDOS);
         raf.write(apellidos);
     }
+    public void insertInOrder(Empleado empleado) throws IOException{
+        // crear un ciclo while que me permita recorrer el archivo, registro por registro
+        // + bandera para salirme del ciclo cuando se haya insertado el empleado
+        int i = 0;
+        int totalRegistros = (int)raf.length()/TAMANO_REGISTRO;
+        boolean insertado = false;
+        while(i<totalRegistros && insertado == false){
+            raf.seek(i*TAMANO_REGISTRO);
+            raf.skipBytes(TAMANO_ID_EMPLEADO);
+            String nombreActual = this.readString(TAMANO_NOMBRE, raf.getFilePointer());
+            if (empleado.getNombre().compareToIgnoreCase(nombreActual)<0){
+                //TODO insertar antes de i
+                raf.setLength(raf.length()+TAMANO_REGISTRO);
+                for (int j = totalRegistros-1; j >= i; j--) {
+                    raf.seek(j*TAMANO_REGISTRO);
+                    byte[] registroActual = new byte[TAMANO_REGISTRO];
+                    raf.readFully(registroActual);
+                    raf.write(registroActual);
+                }
+                raf.seek(i*TAMANO_REGISTRO);
+                raf.writeInt(empleado.getIdEmpleado());
+                byte[] nombre = toBytes(empleado.getNombre(), TAMANO_NOMBRE);
+                raf.write(nombre);
+                byte[] apellidos = toBytes(empleado.getApellidos(), TAMANO_APELLIDOS);
+                raf.write(apellidos);
+                insertado = true;
+            }//if
+            else i++;
+        }//while
+        if (!insertado){
+            raf.setLength(raf.length()+TAMANO_REGISTRO);
+            //raf.seek(raf.length()-TAMANO_REGISTRO);
+            raf.seek(i*TAMANO_REGISTRO);
+            raf.writeInt(empleado.getIdEmpleado());
+            byte[] nombre = toBytes(empleado.getNombre(), TAMANO_NOMBRE);
+            raf.write(nombre);
+            byte[] apellidos = toBytes(empleado.getApellidos(), TAMANO_APELLIDOS);
+            raf.write(apellidos);
+        }
+    }
+    
+    
     
   /*  public boolean buscar(int idEmpleadoBuscado)
             throws IOException{
@@ -94,99 +136,5 @@ public class EmpleadoData  {
         }
         return encontrado;
     }//buscar*/
-
-   /* public boolean delete(int idEmpleadoBuscado)
-            throws IOException{
-        boolean encontrado = false;
-        int totalRegistros = (int)(this.length()/TAMANO_REGISTRO);
-        int numReg=0;
-        int regPorBorrar = -1;
-        while(numReg<totalRegistros && !encontrado){
-            this.seek(numReg * TAMANO_REGISTRO);
-            int idEmpleadoActual = this.readInt();
-            if(idEmpleadoBuscado == idEmpleadoActual) {
-                encontrado = !encontrado;
-                regPorBorrar = numReg;
-            }else numReg++;
-        }
-        if ((numReg<totalRegistros-1) && encontrado){ //estoy ubicado en el penúltimo registro
-
-            //SACAR LOS DATOS DEL REGISTRO?
-            int indice = regPorBorrar+1;
-            this.seek((indice)*TAMANO_REGISTRO);
-            while (indice<totalRegistros) {
-                Empleado empleado = new Empleado();
-                empleado.setIdEmpleado(this.readInt());
-                empleado.setNombre(this.readString(TAMANO_NOMBRE, this.getFilePointer()));
-                empleado.setApellidos(this.readString(TAMANO_APELLIDOS, this.getFilePointer()));
-                this.seek(indice-1 * TAMANO_REGISTRO);
-                this.writeInt(empleado.getIdEmpleado());
-                this.write(toBytes(empleado.getNombre(), TAMANO_NOMBRE));
-                this.write(toBytes(empleado.getApellidos(), TAMANO_APELLIDOS));
-                indice++;
-            }
-            this.setLength(this.length() - TAMANO_REGISTRO);
-
-        }else { //el registro por borrar es el último
-            this.setLength(this.length() - TAMANO_REGISTRO);
-        }
-        return encontrado;
-    }//buscar*/ 
-    /*
-     * Inserta un empleado en el archivo. El nuevo empleado no puede
-     * tener una identificacion igual a uno que ya exista. Los registros
-     * estan ordenados alfabeticamente por nombre
-     */
-   /* public void insertarEmpleado(Empleado empInsertar)
-            throws IOException, EmpleadoExistenteException  {
-        boolean encontrado = this.buscar(empInsertar.getIdEmpleado());
-        if (encontrado)
-            throw new EmpleadoExistenteException();
-        else{
-            boolean insertado = false;
-            int totalRegistros = (int)(this.length()/TAMANO_REGISTRO);
-            int numReg=0;
-            while(numReg<totalRegistros && !insertado){
-                this.seek(numReg * TAMANO_REGISTRO);
-                this.skipBytes(TAMANO_ID_EMPLEADO);
-                String nombreActual =
-                        readString(TAMANO_NOMBRE, this.getFilePointer());
-                if(empInsertar.getNombre().compareTo(nombreActual)<=0){
-                    this.setLength(this.length()+ TAMANO_REGISTRO);
-                    // mover los registros hacia el final
-                    for (int i= totalRegistros-1; i>=numReg; i--){
-                        this.seek(i*TAMANO_REGISTRO);
-                        byte[] registroX = new byte[TAMANO_REGISTRO];
-                        this.readFully(registroX);
-                        // USUARIOS CONCURRENTES.. HAY QUE TENER MAS CUIDADO
-                        this.write(registroX);
-                    }// for
-                    // Guardar el nuevo registro
-                    this.seek(numReg * TAMANO_REGISTRO);
-                    this.writeInt(empInsertar.getIdEmpleado());
-                    this.write(
-                            toBytes(empInsertar.getNombre(),
-                                    TAMANO_NOMBRE));
-                    this.write(
-                            toBytes(empInsertar.getApellidos(),
-                                    TAMANO_APELLIDOS));
-                    insertado = true;
-                }else ++numReg;
-            }//while
-            if(!insertado){
-                this.setLength(this.length()+ TAMANO_REGISTRO);
-                this.seek(this.length()-TAMANO_REGISTRO);
-                this.writeInt(empInsertar.getIdEmpleado());
-                this.write(
-                        toBytes(empInsertar.getNombre(),
-                                TAMANO_NOMBRE));
-                this.write(
-                        toBytes(empInsertar.getApellidos(),
-                                TAMANO_APELLIDOS));
-            }
-        }//else
-
-    }//insertarEmpleado*/
-
    
 }

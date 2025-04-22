@@ -1,5 +1,7 @@
 package cr.ac.ucr.paraiso.progra2.archivosraf.domain;
  
+import java.util.Objects;
+
 public class Empleado {
     private int idEmpleado;
     private String nombre;
@@ -31,4 +33,32 @@ public class Empleado {
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Empleado other = (Empleado) obj;
+        if (this.idEmpleado != other.idEmpleado) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return Objects.equals(this.apellidos, other.apellidos);
+    }
+    
 }
