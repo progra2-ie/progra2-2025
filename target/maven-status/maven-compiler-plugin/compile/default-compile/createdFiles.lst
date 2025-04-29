@@ -8,9 +8,11 @@ cr\ac\ucr\paraiso\progra2\polimorfismo\farm\Perro.class
 cr\ac\ucr\paraiso\progra2\polimorfismo\empleado\Empleado.class
 cr\ac\ucr\paraiso\progra2\polimorfismo\farm\Cow.class
 cr\ac\ucr\paraiso\progra2\Progra22025.class
+cr\ac\ucr\paraiso\progra2\sockets\protocolo\KnockKnockProtocol.class
 cr\ac\ucr\paraiso\progra2\polimorfismo\PistolaLaser.class
 cr\ac\ucr\paraiso\progra2\domain\Empleado.class
 cr\ac\ucr\paraiso\progra2\polimorfismo\SpaceObject.class
+cr\ac\ucr\paraiso\progra2\sockets\cliente\EchoCliente.class
 cr\ac\ucr\paraiso\progra2\herencia\Prueba.class
 cr\ac\ucr\paraiso\progra2\polimorfismo\NaveEspacial.class
 cr\ac\ucr\paraiso\progra2\archivosraf\domain\Empleado.class
@@ -23,3 +25,4 @@ cr\ac\ucr\paraiso\progra2\polimorfismo\Marciano.class
 cr\ac\ucr\paraiso\progra2\herencia\Persona.class
 cr\ac\ucr\paraiso\progra2\polimorfismo\Venuciano.class
 cr\ac\ucr\paraiso\progra2\polimorfismo\farm\Rooster.class
+cr\ac\ucr\paraiso\progra2\sockets\sevidorsimple\KnockKnockServidor.class
