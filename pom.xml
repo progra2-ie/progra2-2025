@@ -7,6 +7,16 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>22-ea+11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>22-ea+11</version>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.6.0</version>
@@ -31,5 +41,16 @@
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>cr.ac.ucr.paraiso.progra2.Progra22025</exec.mainClass>
     </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>  <configuration>
+                <mainClass>cr.ac.ucr.paraiso.progra2.visualserver.VisualAndMultipleThreadsServer</mainClass>
+            </configuration>
+            </plugin>
+        </plugins>
+    </build>
     
 </project>

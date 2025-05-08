@@ -24,7 +24,7 @@ public class EchoCliente {
         BufferedReader reader = null;
 
         try {
-            echoSocket = new Socket("10.59.59.40",9999);
+            echoSocket = new Socket("10.59.58.36",9999);
             writer = new PrintWriter(echoSocket.getOutputStream(), true);
             reader = new BufferedReader(
                     new InputStreamReader(
