@@ -6,6 +6,7 @@ import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Shape;
@@ -17,6 +18,7 @@ import java.net.ServerSocket;
 
 public class VisualAndMultipleThreadsServer extends Application {
     private Label statusLabel;
+    private TextArea taStatus;
     @Override
     public void start(Stage primaryStage) {
         System.out.println(Thread.currentThread().toString());
@@ -38,8 +40,9 @@ public class VisualAndMultipleThreadsServer extends Application {
                 });
 
         this.statusLabel = new Label("Servidor activo");
+        this.taStatus = new TextArea("Servidor activo");
         VBox vBox = new VBox(10);
-        vBox.getChildren().addAll(statusLabel,pane);
+        vBox.getChildren().addAll(taStatus,pane);
         Scene scene = new Scene(vBox,600,600);
 
         primaryStage.setScene(scene);
@@ -48,6 +51,7 @@ public class VisualAndMultipleThreadsServer extends Application {
         primaryStage.sizeToScene();
         rectangleMaker.begin(); //start making new rectangles
         serverSocketStart();
+        taStatus.setEditable(false);
     }
     private void serverSocketStart(){
 
@@ -63,6 +67,8 @@ public class VisualAndMultipleThreadsServer extends Application {
                         System.out.println(Thread.currentThread().toString());
                         KKMultiServidorHilo hilo = new KKMultiServidorHilo(serverSocket.accept());
                         hilo.start();
+                        Platform.runLater(() ->
+                                taStatus.appendText("\n" + hilo.toString()));
                     }
                     serverSocket.close();
                 } catch (IOException e) {
