@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane id="AnchorPane" hgap="10.0"  prefHeight="400.0" prefWidth="813.0" vgap="10.0"
+          xmlns:fx="http://javafx.com/fxml/1"
+          xmlns="http://javafx.com/javafx/2.2"
+          fx:controller="cr.ac.ucr.paraiso.progra2.javafxapp.controller.McdController">
+  <stylesheets>
+    <URL value="@main.css" />
+  </stylesheets>
+  <Label text="" />
+  <Label text="Cálculo del máximo común denominador" 
+         GridPane.columnIndex="0" GridPane.rowIndex="0" />
+  <Label text="Ingrese dos valores:" 
+         GridPane.columnIndex="0" GridPane.rowIndex="2" />
+  <TextField fx:id="tfNumero1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+  <TextField fx:id="tfNumero2" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+  <Button fx:id="btnCalcular" onAction="#onClickedBtnCalcular" text="Calcular"
+          GridPane.columnIndex="1" GridPane.rowIndex="3" />
+</GridPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.*?>
+
+<MenuBar xmlns:fx="http://javafx.com/fxml/1" 
+    fx:controller="cr.ac.ucr.paraiso.progra2.javafxapp.controller.MainMenuController" >
+        <menus>
+            <Menu 
+                mnemonicParsing="false" 
+                text="Cálculos">
+                <items>
+                    <MenuItem 
+                        fx:id="menuMcd" 
+                        mnemonicParsing="false"
+                        onAction="#loadMcdPane" 
+                        text="Calcular el MCD" />
+                    <MenuItem 
+                        fx:id="menuExit" 
+                        mnemonicParsing="false"
+                        onAction="#exit" 
+                        text="Salir" />
+                </items>
+            </Menu>
+        </menus>
+</MenuBar>

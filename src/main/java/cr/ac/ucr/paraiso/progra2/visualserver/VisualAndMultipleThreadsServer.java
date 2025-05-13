@@ -34,6 +34,8 @@ public class VisualAndMultipleThreadsServer extends Application {
                         }
                         //if items are added
                         for (Shape s : change.getAddedSubList()) {
+                            //It is used Platform.runLater because statusLabel is a JavaFX UI component,
+                            // and all UI updates must happen on the JavaFX Application Thread.
                             Platform.runLater(()-> pane.getChildren().add(s));
                         }
                     }
@@ -67,6 +69,7 @@ public class VisualAndMultipleThreadsServer extends Application {
                         System.out.println(Thread.currentThread().toString());
                         KKMultiServidorHilo hilo = new KKMultiServidorHilo(serverSocket.accept());
                         hilo.start();
+                        // It is used Platform.runLater because statusLabel is a JavaFX UI component, and all UI updates must happen on the JavaFX Application Thread.
                         Platform.runLater(() ->
                                 taStatus.appendText("\n" + hilo.toString()));
                     }
