@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<amigos>
+    <amigo numero="JMB">
+        <nombre>Jesús</nombre>
+        <apellidos>Monge Bermúdez</apellidos>
+        <historiaFavoritaConMiAmigo>
+            A mi abuelo le encantaba tener su cuchillo bien afilado,
+            limpio y en un lugar específico. Había que tener
+            mucho cuidado al usarlo.
+        </historiaFavoritaConMiAmigo>
+    </amigo>
+    <amigo numero="EMU">
+        <nombre>Edwin</nombre>
+        <apellidos>Mena Umaña</apellidos>
+        <historiaFavoritaConMiAmigo>
+            A mi papá le encantaban los carbuncos y siempre
+            que podía nos llevaba uno en la noche
+            para que lo viéramos.
+        </historiaFavoritaConMiAmigo>
+    </amigo>
+</amigos>

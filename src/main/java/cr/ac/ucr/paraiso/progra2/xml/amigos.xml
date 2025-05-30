@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<amigos>
+	<amigo>
+		<nombre> Juana </nombre>
+		<apellidos> Pereira </apellidos>
+		<telefono> 2558-1020 </telefono>
+	</amigo>
+	<amigo>
+		<nombre> Marco Tulio </nombre>
+		<apellidos> Hidalgo  </apellidos>
+		<telefono> 2556-8880 </telefono>
+	</amigo>
+	<amigo>
+		<nombre>Julian</nombre>
+		
+		<apellidos>Matarrita</apellidos>
+		<telefono/>
+	</amigo>
+</amigos>
